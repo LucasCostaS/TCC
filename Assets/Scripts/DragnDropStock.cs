@@ -9,7 +9,8 @@ public class DragnDropStock : MonoBehaviour
     private SpriteRenderer rend;
     private string tipo;
     public GameObject prefab;
-
+    //public int limiteMax;
+    //private int limiteAtual;
 
     private void OnMouseOver()
     {
@@ -28,15 +29,20 @@ public class DragnDropStock : MonoBehaviour
     {
 
         Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        //limiteAtual -= 1;
         //screenPoint = Camera.main.WorldToScreenPoint(prefab.transform.position);
         //offset = prefab.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
     }
 
-    /* void OnMouseDrag()
-     {
-         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-         Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
-         transform.position = cursorPosition;
-     }*/
+    /// <summary>
+    /// OnGUI is called for rendering and handling GUI events.
+    /// This function can be called multiple times per frame (one call per event).
+    /// </summary>
+   /* void OnGUI()
+    {
+        GUI.Box(new Rect(32, 0, 32, 128), limiteAtual.ToString());
+    }
+    colocar em um game controller
+    */
 }

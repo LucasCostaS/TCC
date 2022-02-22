@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3951533015110947149}
   - component: {fileID: 1630575661745630184}
   - component: {fileID: 4823933748281357017}
+  - component: {fileID: 4551844547391323246}
   m_Layer: 0
   m_Name: linha_L32 (1)
   m_TagString: Untagged
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.0451146, y: -1.0802612}
   m_SpriteTilingProperty:
     border: {x: 2.3999999, y: 0, z: 0, w: 2.3999999}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 3.0297706, y: 2.9594774}
   m_EdgeRadius: 0
 --- !u!114 &4823933748281357017
 MonoBehaviour:
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0f909333a3f0a44483b7fe362ced0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4551844547391323246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179265506485224612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049eba1ecb808a94ab0d35794edfd48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6024226489902183309
