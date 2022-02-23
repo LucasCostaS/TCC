@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4907178760602021277}
   - component: {fileID: 5515176626500495825}
-  - component: {fileID: 5654504431350696981}
   - component: {fileID: 251502686082532873}
   - component: {fileID: 8964474656741373704}
+  - component: {fileID: 4667598454444589385}
   m_Layer: 0
   m_Name: linha_T32 (1)
   m_TagString: Untagged
@@ -85,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5654504431350696981
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4437542891271760768}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.188834}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 2.3999999}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 2.742332}
-  m_EdgeRadius: 0
 --- !u!114 &251502686082532873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +109,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049eba1ecb808a94ab0d35794edfd48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &4667598454444589385
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437542891271760768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 2.3999999}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.56, y: -0.19}
+      - {x: -0.19999999, y: -2.56}
+      - {x: 0.17999999, y: -2.56}
+      - {x: 2.56, y: -0.19}
+      - {x: 2.56, y: 0.6961015}
+      - {x: 0.0026111603, y: 0.7350325}
+      - {x: -2.5522137, y: 0.6961015}
 --- !u!1 &4585355311427114748
 GameObject:
   m_ObjectHideFlags: 0

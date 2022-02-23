@@ -58,9 +58,7 @@ public class DragnDrop : MonoBehaviour
             {
                 posY = gradeY[i];
             }
-            /* if(transform.position.Y > gradeY[3] + 2.56f){
-                 snap = false;
-             }*/
+
 
         }
         Vector3 posFinal = new Vector3(posX, posY, screenPoint.z);
@@ -68,7 +66,6 @@ public class DragnDrop : MonoBehaviour
         {
             transform.position = posFinal;
         }
-
 
     }
 }
