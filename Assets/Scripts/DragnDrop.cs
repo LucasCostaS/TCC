@@ -11,7 +11,8 @@ public class DragnDrop : MonoBehaviour
     private float[] gradeX = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
     private float[] gradeY = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
     private Vector2 lugar = new Vector2();
-    private Collider2D vet;
+    private int ocupacao;
+    private Collider2d[] resultado = new Collider2d[];
     private Vector3 posSnap = new Vector3();
     private Vector3 posReserva = new Vector3();
     private float posX;
@@ -67,7 +68,7 @@ public class DragnDrop : MonoBehaviour
         }
 
         posSnap.Set(posX, posY, 0);
-        /*lugar.Set(posX, posY);
+        /*
         vet = Physics2D.OverlapCircle(lugar, 0.1f);
         Debug.Log(vet);
         if (vet != null)
@@ -78,7 +79,14 @@ public class DragnDrop : MonoBehaviour
         }*/
         if (snap == true)
         {
-            transform.position = posSnap;
+        /*lugar.Set(posX, posY);
+        ocupacao = OverlapCircle(lugar, 0.1f, resultados);
+        if (ocupacao>1){
+        posReserva.Set(12.8f, transform.position.y, 0);
+        transform.position = posReserva;
+        }
+        else{
+          */transform.position = posSnap;
         }
         posX = 0;
         posY = 0;
