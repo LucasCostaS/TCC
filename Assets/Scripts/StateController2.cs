@@ -43,7 +43,7 @@ public class StateController2 : MonoBehaviour
             switch (i)
             {
                 case 0:
-                    if (vet.tag == "LinhaLPrefab" && vet.gameObject.transform.eulerAngles.z == 0)
+                    if (vet.tag == "LinhaLPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 90)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -53,7 +53,7 @@ public class StateController2 : MonoBehaviour
                     }
                     break;
                 case 1:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                    if (vet.tag == "LinhaRetaPrefab" && (math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 0 || math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 180))
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -62,8 +62,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 2:
+                    if (vet.tag == "LinhaTPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 180)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -72,8 +72,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 3:
+                    if (vet.tag == "LinhaLPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 180)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -82,8 +82,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 4:
+                    if (vet.tag == "LinhaRetaPrefab" && (math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 90 || math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 270))
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -92,8 +92,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 5:
+                    if (vet == null)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -102,8 +102,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 6:
+                    if (vet.tag == "ResistorPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 90)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -112,8 +112,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 7:
+                    if (vet.tag == "LinhaRetaPrefab" && (math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 90 || math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 270))
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -122,8 +122,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 8:
+                    if (vet.tag == "LinhaTPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 45)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -132,8 +132,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 9:
+                    if (vet.tag == "FontePrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 0)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -142,8 +142,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 10:
+                    if (vet.tag == "LinhaLPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 270)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -152,8 +152,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 11:
+                    if (vet.tag == "LinhaRetaPrefab" && (math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 90 || math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 270))
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -162,8 +162,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 12:
+                    if (vet.tag == "LinhaLPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 0)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -172,8 +172,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 13:
+                    if (vet.tag == "ResistorPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 0)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -182,8 +182,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 14:
+                    if (vet.tag == "LinhaRetaPrefab" && (math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 0 || math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 180))
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -192,8 +192,8 @@ public class StateController2 : MonoBehaviour
                         posicaoCorreta[i] = false;
                     }
                     break;
-                case 0:
-                    if (vet.tag == "LinhaL_Base" && vet.gameObject.transform.eulerAngles.z == 0)
+                case 15:
+                    if (vet.tag == "LinhaLPrefab" && math.Ceiling(vet.gameObject.transform.eulerAngles.z) == 270)
                     {
                         posicaoCorreta[i] = true;
                     }
@@ -205,23 +205,17 @@ public class StateController2 : MonoBehaviour
                 default:
                     break;
             }
+           }
+           int cont = 0;
+           for(int i = 0; i < posicaoCorreta.Lenght; i++){
+               if (posicaoCorreta[i] == true)
+               cont++;
+           }
+           if (cont==16){
+           //ativar screen de vitoria
+           //mudar as cores do circuito
+           spawn = false;
+           }
 
-
-
-            //if (posicaoCorreta[1] == tru)
-            vet = Physics2D.OverlapCircle(posicao[0], 0.5f);
-            if (vet != null)
-                Debug.Log(vet.tag);
-        }
-
-        /*/// <summary>
-        /// OnGUI is called for rendering and handling GUI events.
-        /// This function can be called multiple times per frame (one call per event).
-        /// </summary>
-        void OnGUI()
-        {
-            GUI.Box(new Rect(48, 16, 32, 32), limiteResistor.ToString());
-            GUI.Box(new Rect(x, y, 32, 32), limiteFonte.ToString());
-        }
-        //colocar em um game controller*/
+      
     }
