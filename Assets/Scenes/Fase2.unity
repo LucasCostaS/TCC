@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 1500556944}
   - component: {fileID: 1500556943}
   m_Layer: 0
-  m_Name: StateController
+  m_Name: StateController2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,11 +607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437b24218d2e0b45ab098aeaeb22d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limiteResistor: 3
-  limiteReta: 5
-  limiteL: 4
-  limiteT: 4
-  limiteFonte: 1
+  limiteResistor: 2
+  limiteReta: 2
+  limiteL: 2
+  limiteT: 2
+  limiteFonte: 2
   x: 0
   y: 0
   spawn: 0

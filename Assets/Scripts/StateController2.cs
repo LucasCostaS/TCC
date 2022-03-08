@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateController : MonoBehaviour
+public class StateController2 : MonoBehaviour
 {
+    // Start is called before the first frame update
 
     public int limiteResistor, limiteReta, limiteL, limiteT, limiteFonte, x, y;
     public bool spawn;
@@ -41,5 +42,4 @@ public class StateController : MonoBehaviour
         GUI.Box(new Rect(x, y, 32, 32), limiteFonte.ToString());
     }
     //colocar em um game controller
-
 }

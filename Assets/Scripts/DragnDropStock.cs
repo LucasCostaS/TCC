@@ -11,11 +11,11 @@ public class DragnDropStock : MonoBehaviour
     public GameObject prefab;
 
     public GameObject state;
-    private StateController controlador;
+    private StateController2 controlador;
     private int limite;
     private void Start()
     {
-        controlador = state.GetComponent<StateController>();
+        controlador = state.GetComponent<StateController2>();
     }
 
 
