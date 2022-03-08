@@ -10,6 +10,10 @@ public class DragnDrop : MonoBehaviour
     private SpriteRenderer rend;
     private float[] gradeX = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
     private float[] gradeY = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
+    private Vector2 lugar = new Vector2();
+    private Collider2D vet;
+    private Vector3 posSnap = new Vector3();
+    private Vector3 posReserva = new Vector3();
     private float posX;
     private float posY;
     private bool snap = true;
@@ -37,11 +41,11 @@ public class DragnDrop : MonoBehaviour
         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
         transform.position = cursorPosition;
+
     }
 
-    void OnMouseUp()
+    async void OnMouseUp()
     {
-
         for (int i = 0; i < 4; i++)
         {
 
@@ -54,18 +58,30 @@ public class DragnDrop : MonoBehaviour
             {
                 snap = false;
             }
+
             if (transform.position.y >= gradeY[i] - 2.56f && transform.position.y < gradeY[i] + 2.56f)
             {
                 posY = gradeY[i];
             }
 
-
         }
-        Vector3 posFinal = new Vector3(posX, posY, screenPoint.z);
+
+        posSnap.Set(posX, posY, 0);
+        /*lugar.Set(posX, posY);
+        vet = Physics2D.OverlapCircle(lugar, 0.1f);
+        Debug.Log(vet);
+        if (vet != null)
+        {
+            snap = false;
+            posReserva.Set(7.68f + 5.12f, transform.position.y, 0);
+            transform.position = posReserva;
+        }*/
         if (snap == true)
         {
-            transform.position = posFinal;
+            transform.position = posSnap;
         }
+        posX = 0;
+        posY = 0;
 
     }
 }

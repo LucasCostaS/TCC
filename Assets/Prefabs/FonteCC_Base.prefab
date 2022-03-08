@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2575216710009624289}
   m_Layer: 0
   m_Name: Fonte_CC (1)
-  m_TagString: Untagged
+  m_TagString: FontePrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f909333a3f0a44483b7fe362ced0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 0}
 --- !u!114 &2575216710009624289
 MonoBehaviour:
   m_ObjectHideFlags: 0
