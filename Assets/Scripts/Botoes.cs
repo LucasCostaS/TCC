@@ -29,5 +29,10 @@ public class Botoes : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void BotaoSair()
+    {
+        Application.Quit();
+    }
+
 
 }

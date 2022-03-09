@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3951533015110947149}
   - component: {fileID: 4823933748281357017}
   - component: {fileID: 4551844547391323246}
-  - component: {fileID: 6754767017978330365}
+  - component: {fileID: 8813093656564330110}
   m_Layer: 0
   m_Name: linha_L32 (1)
   m_TagString: LinhaLPrefab
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b05ad498a810e314a9214665edf3686f, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049eba1ecb808a94ab0d35794edfd48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &6754767017978330365
-PolygonCollider2D:
+--- !u!61 &8813093656564330110
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,7 +122,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.0183581, y: -1.0651793}
   m_SpriteTilingProperty:
     border: {x: 2.3999999, y: 0, z: 0, w: 2.3999999}
     pivot: {x: 0.5, y: 0.5}
@@ -132,17 +132,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.7036275, y: 0.7078694}
-      - {x: -0.6967791, y: -1.4537094}
-      - {x: -0.71259147, y: -2.8129978}
-      - {x: -0.03187093, y: -2.8129978}
-      - {x: 0.25324947, y: -2.7971854}
-      - {x: 2.773467, y: -0.19}
-      - {x: 2.7587125, y: 0.5850896}
-      - {x: 0.9191367, y: 0.6625372}
-      - {x: -0.064122856, y: 0.66938573}
+  serializedVersion: 2
+  m_Size: {x: 2.8725893, y: 2.7823577}
+  m_EdgeRadius: 0
 --- !u!1 &6024226489902183309
 GameObject:
   m_ObjectHideFlags: 0

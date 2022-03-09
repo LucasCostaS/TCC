@@ -9,6 +9,7 @@ public class DragnDropStock : MonoBehaviour
     private SpriteRenderer rend;
     private string tipo;
     public GameObject prefab;
+    public GameObject pai;
 
     public GameObject state;
     private StateController2 controlador;
@@ -23,7 +24,6 @@ public class DragnDropStock : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         rend.color = Color.yellow;
-        tipo = gameObject.tag;
 
     }
 
@@ -34,48 +34,13 @@ public class DragnDropStock : MonoBehaviour
 
     void OnMouseDown()
     {
-        switch (gameObject.tag)
+
+
+        if (controlador.spawn == true)
         {
-            case "Resistor":
-                limite = controlador.limiteResistor;
-                if (controlador.limiteResistor > 0 && controlador.spawn == true)
-                    controlador.limiteResistor -= 1;
-                break;
-
-            case "Fonte":
-                limite = controlador.limiteFonte;
-                if (controlador.limiteFonte > 0 && controlador.spawn == true)
-                    controlador.limiteFonte -= 1;
-                break;
-
-            case "LinhaL":
-                limite = controlador.limiteL;
-                if (controlador.limiteL > 0 && controlador.spawn == true)
-                    controlador.limiteL -= 1;
-                break;
-
-            case "LinhaReta":
-                limite = controlador.limiteReta;
-                if (controlador.limiteReta > 0 && controlador.spawn == true)
-                    controlador.limiteReta -= 1;
-                break;
-
-            case "LinhaT":
-                limite = controlador.limiteT;
-                if (controlador.limiteT > 0 && controlador.spawn == true)
-                    controlador.limiteT -= 1;
-                break;
-        }
-
-        if (controlador.spawn == true && limite > 0)
-        {
-            Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity, pai.transform);
             controlador.spawn = false;
         }
-
-        //limiteAtual -= 1;
-        //screenPoint = Camera.main.WorldToScreenPoint(prefab.transform.position);
-        //offset = prefab.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
     }
 
