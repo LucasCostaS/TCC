@@ -9,6 +9,11 @@ TagManager:
   - LinhaL
   - LinhaReta
   - LinhaT
+  - ResistorPrefab
+  - FontePrefab
+  - LinhaLPrefab
+  - LinhaRetaPrefab
+  - LinhaTPrefab
   layers:
   - Default
   - TransparentFX
