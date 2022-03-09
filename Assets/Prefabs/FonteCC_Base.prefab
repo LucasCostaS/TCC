@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2575216710009624289}
   m_Layer: 0
   m_Name: Fonte_CC (1)
-  m_TagString: Untagged
+  m_TagString: FontePrefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a25ee3c9206849e418ce4c289234cf16, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.006625533}
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f909333a3f0a44483b7fe362ced0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: {fileID: 0}
 --- !u!114 &2575216710009624289
 MonoBehaviour:
   m_ObjectHideFlags: 0
