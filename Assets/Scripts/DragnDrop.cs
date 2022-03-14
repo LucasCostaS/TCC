@@ -12,20 +12,31 @@ public class DragnDrop : MonoBehaviour
     private float[] gradeY = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
     private Vector2 lugar = new Vector2();
     private Collider2D colisorLixo;
+    private Collider2D[] aux;
     private GameObject lixo;
     private int ocupacao;
     private Vector3 posSnap = new Vector3();
     private Vector3 posReserva = new Vector3();
+    private Vector3 escalaAtual = new Vector3();
     private float posX;
     private float posY;
     private bool snap = true;
 
+    private bool trava = false;
+
     void Start()
     {
+        aux = Physics2D.OverlapBoxAll(new Vector2(0f, 0f), new Vector2(100f, 100f), 0f);
+        foreach (var col in aux)
+        {
+            if (col.gameObject.tag == "Lixo")
+            {
+                colisorLixo = col;
+                lixo = colisorLixo.gameObject;
+                escalaAtual = new Vector3(lixo.transform.localScale.x, lixo.transform.localScale.y, 1f);
+            }
 
-        colisorLixo = Physics2D.OverlapBox(new Vector2(16.7f, 7.68f), new Vector2(1f, 2f), 0f);
-        lixo = colisorLixo.gameObject;
-
+        }
     }
 
     private void OnMouseOver()
@@ -53,11 +64,20 @@ public class DragnDrop : MonoBehaviour
         transform.position = cursorPosition;
         if (Physics2D.IsTouching(colisorLixo, gameObject.GetComponent<BoxCollider2D>()))
         {
-            lixo.transform.localScale = new Vector3(1f, 1f, 1f);
+            if (trava == false)
+            {
+                escalaAtual = new Vector3(lixo.transform.localScale.x, lixo.transform.localScale.y, 1f);
+                lixo.transform.localScale = new Vector3(lixo.transform.localScale.x * 1.2f, lixo.transform.localScale.y * 1.2f, 1f);
+                trava = true;
+            }
+
+
         }
         else
         {
-            lixo.transform.localScale = new Vector3(0.667f, 0.667f, 1f);
+            lixo.transform.localScale = escalaAtual;
+            escalaAtual = new Vector3(lixo.transform.localScale.x, lixo.transform.localScale.y, 1f);
+            trava = false;
         }
 
     }
