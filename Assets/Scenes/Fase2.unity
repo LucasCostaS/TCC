@@ -680,7 +680,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 48.79298, y: 48.79298, z: 48.79298}
+  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0
@@ -1779,7 +1779,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 48.79298, y: 48.79298, z: 48.79298}
+  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0
@@ -2123,6 +2123,7 @@ MonoBehaviour:
   vitoria: {fileID: 1772568248}
   sombra: {fileID: 1921767614}
   pecas: {fileID: 288946074}
+  stock: {fileID: 1232925427}
 --- !u!4 &1500556944
 Transform:
   m_ObjectHideFlags: 0
@@ -2636,7 +2637,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 48.79298, y: 48.79298, z: 48.79298}
+  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0

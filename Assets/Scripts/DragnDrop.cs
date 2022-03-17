@@ -103,11 +103,9 @@ public class DragnDrop : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            //UnityEngine.Debug.Log(transform.position.x + "    " + (gradeX[i] + (Math.Abs((gradeX[0] - gradeX[1])) / 2)) + "   " + (gradeX[i] - (Math.Abs((gradeX[0] - gradeX[1])) / 2)));
             if (transform.position.x >= (gradeX[i] - (Math.Abs((gradeX[0] - gradeX[1])) / 2)) && transform.position.x < (gradeX[i] + (Math.Abs((gradeX[0] - gradeX[1])) / 2)))
             {
                 posX = gradeX[i];
-                UnityEngine.Debug.Log("entrei  " + posX);
                 snap = true;
             }
             if (transform.position.x > gradeX[3] + (Math.Abs((gradeX[0] - gradeX[1])) / 2))
@@ -128,16 +126,19 @@ public class DragnDrop : MonoBehaviour
             lugar.Set(posX, posY);
             Collider2D[] resultado = Physics2D.OverlapCircleAll(lugar, 2f);
             ocupacao = resultado.Length;
+
             if (ocupacao > 1)
             {
-                if (transform.position.y >= lixo.transform.position.y - 2.56f)
+                UnityEngine.Debug.Log(transform.position.y >= lixo.transform.position.y - (colisorLixo.bounds.size.y / 2));
+                if (transform.position.y >= lixo.transform.position.y - (colisorLixo.bounds.size.y / 2))
                 {
-                    posReserva.Set(12.8f, transform.position.y - 5.2f, 0);
+                    posReserva.Set(gradeX[3] + (Math.Abs(gradeX[0] - gradeX[1]) * 1.1f), transform.position.y - colisorLixo.bounds.size.y, 0);
                     transform.position = posReserva;
                 }
                 else
                 {
-                    posReserva.Set(12.8f, transform.position.y, 0);
+                    posReserva.Set(gradeX[3] + (Math.Abs(gradeX[0] - gradeX[1]) * 1.1f), transform.position.y, 0);
+                    transform.position = posReserva;
                 }
             }
             else
