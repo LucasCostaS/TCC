@@ -7,10 +7,10 @@ using TMPro;
 public class StateController3 : MonoBehaviour
 {
 
-    public GameObject r1, r2, r3, r4, prefab1, pecas;
+    public GameObject r1, r2, r3, r4, prefab1, pecas, vitoria;
     private float movX1, movY1, rotZ, movX2, movX3, movY3;
-    private bool teste1, teste2, teste3, criar1, parte1, parte2;
-    //public TMP_Text texto;
+    private bool teste1, teste2, teste3, criar1, parte1, parte2, anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class StateController3 : MonoBehaviour
         criar1 = true;
         parte1 = true;
         parte2 = true;
+        anim = true;
     }
 
     // Update is called once per frame
@@ -39,6 +40,10 @@ public class StateController3 : MonoBehaviour
         if (r2 != null)
         {
             equivalente3();
+        }
+        if (r2 == null)
+        {
+            checarVitoria();
         }
     }
 
@@ -145,6 +150,24 @@ public class StateController3 : MonoBehaviour
                 r1.GetComponent<Resistores3>().reduzido = true;
                 //parte1 = false;
                 //r3.transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().SetText(r3.GetComponent<Resistores3>().resistencia.ToString());
+            }
+
+        }
+    }
+
+    private void checarVitoria()
+    {
+        if (r1.GetComponent<Resistores3>().resistencia == 3)
+        {
+            vitoria.SetActive(true);
+            if (anim)
+            {
+                pecas.transform.Translate((2.56f / 90f), 0f, 0f);
+                if (pecas.transform.position.x >= 5.12f)
+                {
+                    pecas.transform.position = new Vector3(5.12f, 0f, 0f);
+                    anim = false;
+                }
             }
 
         }

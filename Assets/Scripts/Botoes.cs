@@ -24,6 +24,11 @@ public class Botoes : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void Fase3()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void VoltarMenu()
     {
         SceneManager.LoadScene(0);
