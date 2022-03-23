@@ -63,7 +63,7 @@ public class DragnDrop : MonoBehaviour
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
     }
 
-    void OnMouseDrag()
+    private void OnMouseDrag()
     {
         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
         Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
@@ -89,7 +89,7 @@ public class DragnDrop : MonoBehaviour
     }
 
 
-    async void OnMouseUp()
+    private void OnMouseUp()
     {
         gradeX = temp.gradeX;
         gradeY = temp.gradeY;

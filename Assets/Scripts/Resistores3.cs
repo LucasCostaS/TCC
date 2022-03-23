@@ -7,7 +7,9 @@ public class Resistores3 : MonoBehaviour
 {
 
     public float resistencia = 1;
-    public bool modificado, reduzido, click;
+    public bool modificado, reduzido;
+    public GameObject controller;
+
 
 
     // Start is called before the first frame update
@@ -15,7 +17,6 @@ public class Resistores3 : MonoBehaviour
     {
         modificado = false;
         reduzido = false;
-        click = true;
     }
 
     private void OnMouseOver()
@@ -30,7 +31,7 @@ public class Resistores3 : MonoBehaviour
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<SpriteRenderer>().color = Color.white;
         if (reduzido == true)
         {
             transform.GetChild(1).gameObject.SetActive(false);
@@ -41,10 +42,10 @@ public class Resistores3 : MonoBehaviour
     void OnMouseDown()
     {
 
-        if (reduzido == false && click == true)
+        if (reduzido == false && controller.GetComponent<StateController3>().click == true)
         {
             transform.GetChild(0).gameObject.SetActive(true);
-            click = false;
+            controller.GetComponent<StateController3>().click = false;
         }
     }
     private void Update()
@@ -56,6 +57,6 @@ public class Resistores3 : MonoBehaviour
         resistencia = float.Parse(texto);
         transform.GetChild(0).gameObject.SetActive(false);
         modificado = true;
-        click = true;
+        controller.GetComponent<StateController3>().click = true;
     }
 }

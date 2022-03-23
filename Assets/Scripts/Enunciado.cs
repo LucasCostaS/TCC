@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enunciado : MonoBehaviour
 {
-    public GameObject objeto;
+    public GameObject objeto, objeto2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +21,6 @@ public class Enunciado : MonoBehaviour
     {
         gameObject.SetActive(false);
         objeto.SetActive(true);
+        objeto2.SetActive(true);
     }
 }
