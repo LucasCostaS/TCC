@@ -10,34 +10,55 @@ public class StateController2 : MonoBehaviour
     public bool spawn;
     private Vector2 lugar = new Vector2(0.0f, 0.0f);
     private Collider2D vet, vet1;
-    private float[] gradeX = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
-    private float[] gradeY = new float[] { -7.68f, -2.56f, 2.56f, 7.68f };
+    private float[] gradeX = new float[4];
+    private float[] gradeY = new float[4];
     private Vector2[] posicao = new Vector2[16];
     private bool[] posicaoCorreta = new bool[16];
-    public GameObject vitoria, sombra, pecas;
+    public GameObject vitoria, sombra, pecas, stock;
     // Start is called before the first frame update
     void Start()
     {
         spawn = true;
-        for (int i = 0; i < gradeY.Length; i++)
-        {
-            for (int j = 0; j < gradeX.Length; j++)
-            {
-                posicao[(i * 4) + j].Set(gradeX[j], gradeY[i]);
-            }
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        setarSnap();
+
         vet = Physics2D.OverlapCircle(lugar, 0.1f);
         if (vet == null)
         {
             spawn = true;
         }
 
+        checarPosicao();
 
+        checarVitoria();
+
+
+    }
+
+    public void setarSnap()
+    {
+        for (int i = 0; i < gradeY.Length; i++)
+        {
+            gradeX[i] = sombra.transform.GetChild(i).transform.position.x;
+            gradeY[i] = sombra.transform.GetChild(4 * i).transform.position.y;
+        }
+        for (int i = 0; i < gradeY.Length; i++)
+        {
+            for (int j = 0; j < gradeY.Length; j++)
+            {
+                posicao[j + (4 * i)] = new Vector2(gradeX[j], gradeY[gradeY.Length - (1 + i)]);
+            }
+        }
+    }
+
+    private void checarPosicao()
+    {
         for (int i = 0; i < posicaoCorreta.Length; i++)
         {
             vet1 = Physics2D.OverlapCircle(posicao[i], 0f);
@@ -211,6 +232,10 @@ public class StateController2 : MonoBehaviour
             }
 
         }
+    }
+
+    private void checarVitoria()
+    {
         int cont = 0;
         for (int i = 0; i < posicaoCorreta.Length; i++)
         {
@@ -222,16 +247,20 @@ public class StateController2 : MonoBehaviour
         {
             vitoria.SetActive(true);
             sombra.SetActive(false);
+            stock.SetActive(false);
             int k = pecas.transform.childCount;
             for (int i = 0; i < k; i++)
             {
-                SpriteRenderer rend = pecas.transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>();
-                rend.color = Color.yellow;
+                Destroy(pecas.transform.GetChild(i).GetChild(0).GetComponent<DragnDrop>());
+                pecas.transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().color = Color.yellow;
+                pecas.transform.GetChild(i).GetChild(0).localScale = new Vector3(0.5f, 0.5f, 0f);
+                pecas.transform.GetChild(i).GetChild(0).localPosition = new Vector3(pecas.transform.GetChild(i).GetChild(0).localPosition.x * 0.5f, pecas.transform.GetChild(i).GetChild(0).localPosition.y * 0.5f, 0f);
+
             }
+
             //mudar as cores do circuito
             spawn = false;
         }
-
-
     }
+
 }

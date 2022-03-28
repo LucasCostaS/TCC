@@ -7,6 +7,7 @@ public class StateController1 : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool b1 = false;
+    private bool b2 = true;
     public GameObject fase, botao;
     void Start()
     {
@@ -17,7 +18,6 @@ public class StateController1 : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(Math.Ceiling(fase.transform.GetChild(0).transform.eulerAngles.z));
         if (Math.Ceiling(fase.transform.GetChild(0).transform.eulerAngles.z) == 0 &&
         Math.Ceiling(fase.transform.GetChild(1).transform.eulerAngles.z) == 0 &&
         Math.Ceiling(fase.transform.GetChild(2).transform.eulerAngles.z) == 0 &&
@@ -37,13 +37,16 @@ public class StateController1 : MonoBehaviour
         else
             b1 = false;
 
-        if (b1 == true)
+        if (b1 == true && b2 == true)
         {
             for (int i = 0; i < 15; i++)
             {
-                SpriteRenderer rend = fase.transform.GetChild(i).GetComponent<SpriteRenderer>();
-                rend.color = Color.yellow;
+                fase.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.yellow;
+                Destroy(fase.transform.GetChild(i).GetComponent<Rotacao>());
+                fase.transform.GetChild(i).localScale = new Vector3(0.75f, 0.75f, 0f);
+                fase.transform.GetChild(i).localPosition = new Vector3(fase.transform.GetChild(i).localPosition.x * 0.75f, fase.transform.GetChild(i).localPosition.y * 0.75f, 0f);
             }
+            b2 = false;
 
             botao.SetActive(true);
 
