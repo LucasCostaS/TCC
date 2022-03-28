@@ -680,7 +680,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
+  m_ScaleOffset: {x: 43.91733, y: 43.91733, z: 43.91733}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0
@@ -1779,7 +1779,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
+  m_ScaleOffset: {x: 43.91733, y: 43.91733, z: 43.91733}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0
@@ -2637,7 +2637,7 @@ ScaleConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_ScaleAtRest: {x: 1, y: 1, z: 1}
-  m_ScaleOffset: {x: 43.93442, y: 43.93442, z: 43.93442}
+  m_ScaleOffset: {x: 43.91733, y: 43.91733, z: 43.91733}
   m_AffectScalingX: 1
   m_AffectScalingY: 1
   m_AffectScalingZ: 0

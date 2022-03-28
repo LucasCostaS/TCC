@@ -18,8 +18,6 @@ public class StateController1 : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(Math.Ceiling(fase.transform.GetChild(14).transform.eulerAngles.z));
-        Debug.Log(Math.Ceiling(fase.transform.GetChild(10).transform.eulerAngles.z));
         if (Math.Ceiling(fase.transform.GetChild(0).transform.eulerAngles.z) == 0 &&
         Math.Ceiling(fase.transform.GetChild(1).transform.eulerAngles.z) == 0 &&
         Math.Ceiling(fase.transform.GetChild(2).transform.eulerAngles.z) == 0 &&

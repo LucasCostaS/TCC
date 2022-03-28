@@ -8,29 +8,36 @@ public class StateController3 : MonoBehaviour
 {
 
     public GameObject r1, r2, r3, r4, prefab1, pecas, vitoria;
-    private float movX1, movY1, rotZ, movX2, movX3, movY3;
+    private float movX1, movY1, rotZ, movX2, movX3, movY3, newFPS;
     private bool teste1, teste2, teste3, criar1, parte1, parte2, anim;
     public bool click;
+
+    private float fps = 90f;
 
     // Start is called before the first frame update
     void Start()
     {
-        movX1 = (r4.transform.localPosition.x - r3.transform.localPosition.x) / 60;
-        movY1 = (r4.transform.localPosition.y - r3.transform.localPosition.y) / 60;
-        movX2 = (r2.transform.localPosition.x - r4.transform.localPosition.x) / 100;
-        movX3 = (r2.transform.localPosition.x - r1.transform.localPosition.x) / 60;
-        movY3 = (r2.transform.localPosition.y - r1.transform.localPosition.y) / 60;
-        rotZ = 90 / 60;
+        movX1 = (r4.transform.localPosition.x - r3.transform.localPosition.x);
+        movY1 = (r4.transform.localPosition.y - r3.transform.localPosition.y);
+        movX2 = (r2.transform.localPosition.x - r4.transform.localPosition.x);
+        movX3 = (r2.transform.localPosition.x - r1.transform.localPosition.x);
+        movY3 = (r2.transform.localPosition.y - r1.transform.localPosition.y);
         criar1 = true;
         parte1 = true;
         parte2 = true;
         anim = true;
         click = true;
+        newFPS = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        newFPS = 1.0f / Time.smoothDeltaTime;
+        if (newFPS != float.PositiveInfinity)
+            fps = Mathf.Lerp(fps, newFPS, 0.005f);
+        //UnityEngine.Debug.Log((fps));
+
         if (r4 != null)
         {
             equivalente1();
@@ -63,11 +70,11 @@ public class StateController3 : MonoBehaviour
             teste2 = !teste1 && r3.transform.rotation.eulerAngles.z < 90;
 
             if (teste1)
-                r3.transform.Translate(0f, movY1, 0f, Space.World);
+                r3.transform.Translate(0f, (movY1 / fps), 0f, Space.World);
             if (teste2)
-                r3.transform.Rotate(0f, 0f, rotZ);
+                r3.transform.Rotate(0f, 0f, 0.5f);
             if (teste3)
-                r3.transform.Translate(movX1, 0f, 0f, Space.World);
+                r3.transform.Translate((movX1 / fps), 0f, 0f, Space.World);
 
 
             if (!teste1 && !teste2 && !teste3)
@@ -101,7 +108,7 @@ public class StateController3 : MonoBehaviour
             {
                 foreach (GameObject item in linha)
                 {
-                    item.transform.Translate(movX2, 0f, 0f, Space.World);
+                    item.transform.Translate(movX2 / fps, 0f, 0f, Space.World);
                 }
             }
             else
@@ -135,11 +142,11 @@ public class StateController3 : MonoBehaviour
             teste2 = !teste1 && r1.transform.rotation.eulerAngles.z < 90;
 
             if (teste1)
-                r1.transform.Translate(0f, movY3, 0f, Space.World);
+                r1.transform.Translate(0f, movY3 / fps, 0f, Space.World);
             if (teste2)
-                r1.transform.Rotate(0f, 0f, rotZ);
+                r1.transform.Rotate(0f, 0f, 0.5f);
             if (teste3)
-                r1.transform.Translate(movX3, 0f, 0f, Space.World);
+                r1.transform.Translate(movX3 / fps, 0f, 0f, Space.World);
 
 
             if (!teste1 && !teste2 && !teste3)
@@ -163,10 +170,17 @@ public class StateController3 : MonoBehaviour
             vitoria.SetActive(true);
             if (anim)
             {
-                pecas.transform.Translate((2.56f / 90f), 0f, 0f);
+                pecas.transform.Translate((2.56f / fps), 0f, 0f);
                 if (pecas.transform.position.x >= 6.144f)
                 {
                     pecas.transform.position = new Vector3(6.144f, 0f, 0f);
+                    for (int i = 0; i < pecas.transform.childCount; i++)
+                    {
+                        if (pecas.transform.GetChild(i).childCount == 1)
+                            pecas.transform.GetChild(i).transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.yellow;
+                        else
+                            pecas.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.yellow;
+                    }
                     anim = false;
                 }
             }
@@ -188,6 +202,7 @@ public class StateController3 : MonoBehaviour
             r1.GetComponent<Resistores3>().modificado = false;
             Destroy(pecas.transform.GetChild(pecas.transform.childCount - 1).gameObject);
             criar1 = true;
+            return;
         }
 
         if (r3 == null && r2 != null)
@@ -207,12 +222,14 @@ public class StateController3 : MonoBehaviour
             pecas.transform.GetChild(18).gameObject.SetActive(true);
             foreach (GameObject item in linha)
             {
-                item.transform.localPosition = new Vector3(pecas.transform.GetChild(18).localPosition.x + 2.56f, item.transform.localPosition.y, 0f);
+                item.transform.localPosition = new Vector3(pecas.transform.GetChild(18).localPosition.x + 5.12f, item.transform.localPosition.y, 0f);
             }
 
             parte2 = true;
             criar1 = true;
+            return;
         }
+
         if (r4 == null && r3 != null)
         {
             r4 = pecas.transform.GetChild(12).gameObject;
@@ -226,6 +243,8 @@ public class StateController3 : MonoBehaviour
             r4.GetComponent<Resistores3>().reduzido = false;
             r4.GetComponent<Resistores3>().modificado = false;
             parte1 = true;
+            criar1 = true;
+            return;
         }
     }
 }
