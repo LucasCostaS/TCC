@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class Rotacao : MonoBehaviour
         // Se botão direito do mouse pressionado, rotaciona para esquerda
         else if (Input.GetMouseButtonDown(1))
         {
+
             transform.Rotate(0.0f, 0.0f, 45.0f, Space.Self);
         }
     }
